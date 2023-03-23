@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -19,7 +20,9 @@ public class EditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit);
 
         Intent intent = getIntent();
-        Bitmap bitmap = (Bitmap)this.getIntent().getParcelableExtra("bmp");
+        Bitmap bitmap;
+        byte[] byteArray = intent.getByteArrayExtra("image");
+        bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         image = (ImageView) findViewById(R.id.imageWindow);
         image.setImageBitmap(bitmap);
 

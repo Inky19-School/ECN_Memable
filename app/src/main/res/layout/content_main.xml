@@ -76,10 +76,10 @@
                     android:onClick="editImage"/>
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageView10"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    app:srcCompat="@drawable/earth"
+                    app:srcCompat="@drawable/jupiter"
                     android:onClick="editImage"/>
 
                 <ImageView
