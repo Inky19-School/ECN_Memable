@@ -5,18 +5,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.material.navigation.NavigationView;
-
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.ui.AppBarConfiguration;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,8 +23,6 @@ import java.io.ByteArrayOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
     private DrawerLayout drawer;
     private LinearLayout recents;
     private TextView emptyRecent;
@@ -35,11 +30,22 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
     public static final int IMAGE_RESPONSE = 3;
 
+    /**
+     * Convert an image to an array of bytes so it can be passed to another activity
+     * @param bmp Bitmap to convert
+     * @return Bitmap in byte[] and compressed in the JPEG format
+     */
+    private byte[] bitmapToBytes(Bitmap bmp){
+        ByteArrayOutputStream bStream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, bStream);
+        return bStream.toByteArray();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.memable.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
         Toolbar toolbar = binding.appBarMain.toolbar;
@@ -47,39 +53,24 @@ public class MainActivity extends AppCompatActivity {
         emptyRecent = binding.appBarMain.contentMain.emptyRecent;
         searchView = binding.appBarMain.searchView;
 
-        searchView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                searchView.setIconified(false);
-            }
-        });
+        searchView.setOnClickListener(v -> searchView.setIconified(false));
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDrawer(v);
-            }
-        });
+        toolbar.setNavigationOnClickListener(this::openDrawer);
         //setSupportActionBar(binding.appBarMain.toolbar);
 
         drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.drawer_settings, R.id.drawer_profile, R.id.drawer_about)
-                .setOpenableLayout(drawer)
-                .build();
 
 
     }
-    public void switchActivities(View view) {
+
+    /**
+     * Edit an empty image
+     * @param view
+     */
+    public void editNew(View view) {
         Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.defaultbackground);
         Intent intent = new Intent(this, EditActivity.class);
-        //intent.putExtra("Image", bmp);
-        ByteArrayOutputStream bStream = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 100, bStream);
-        byte[] byteArray = bStream.toByteArray();
+        byte[] byteArray = bitmapToBytes(bmp);
         intent.putExtra("image", byteArray);
         startActivityForResult(intent, IMAGE_RESPONSE);
     }
@@ -119,32 +110,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Opens the drawer from the left side of the screen
+     * @param view
+     */
     public void openDrawer(View view) {
-        drawer.openDrawer(Gravity.LEFT);
+        drawer.openDrawer(GravityCompat.START);
     }
 
+    /**
+     * Sends an image to the image editor.
+     * @param view ImageView containing the image
+     */
     public void editImage(View view){
         ImageView imgView = (ImageView) view;
         imgView.setDrawingCacheEnabled(true);
         Bitmap bmp = imgView.getDrawingCache();
         Intent intent = new Intent(this, EditActivity.class);
-        //intent.putExtra("Image", bmp);
-        ByteArrayOutputStream bStream = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 100, bStream);
-        byte[] byteArray = bStream.toByteArray();
+        byte[] byteArray = bitmapToBytes(bmp);
         intent.putExtra("image", byteArray);
         startActivityForResult(intent, IMAGE_RESPONSE);
-    }
-
-    public void addRecent(View view){
-        ImageView newImage = new ImageView(this);
-        newImage.setImageResource(R.drawable.venus);
-        int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
-
-        recents.addView(newImage);
-        newImage.getLayoutParams().height = dimensionInDp;
-        newImage.getLayoutParams().width = dimensionInDp;
-        newImage.requestLayout();
     }
 
 }
