@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\activity_edit.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\activity_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\app_navbar_main.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\app_navbar_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\fragment_gallery.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\content_main.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\nav_header_main.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.memable.app-mergeDebugResources-44:/layout/activity_edit.xml",
+        "source": "com.memable.app-main-47:/layout/activity_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\app_bar_main.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-mergeDebugResources-44:\\layout\\fragment_slideshow.xml",
+        "source": "C:\\Users\\remir\\.gradle\\daemon\\7.5\\com.memable.app-main-47:\\layout\\fragment_slideshow.xml"
+    }
+]

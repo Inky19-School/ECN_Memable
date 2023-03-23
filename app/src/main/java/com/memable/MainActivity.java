@@ -6,6 +6,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.LinearLayout;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private DrawerLayout drawer;
+    private LinearLayout recent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private void switchActivities() {
+    public void switchActivities(View view) {
         Intent switchActivityIntent = new Intent(this, EditActivity.class);
         startActivity(switchActivityIntent);
     }
