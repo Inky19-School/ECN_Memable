@@ -1,11 +1,15 @@
 package com.memable;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -20,21 +24,27 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.memable.databinding.ActivityMainBinding;
+import com.memable.databinding.ContentMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private DrawerLayout drawer;
-    private LinearLayout recent;
+    private LinearLayout recents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+
         setContentView(binding.getRoot());
         Toolbar toolbar = binding.appBarMain.toolbar;
+        recents = binding.appBarMain.contentMain.recentImages;
+
+
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +77,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void openDrawer(View view) {
         drawer.openDrawer(Gravity.LEFT);
+    }
+
+    public void editImage(View view){
+        ImageView imgView = (ImageView) view;
+        imgView.setDrawingCacheEnabled(true);
+        Bitmap bmp = imgView.getDrawingCache();
+        Intent intent = new Intent(this, EditActivity.class);
+        intent.putExtra("Image", bmp);
+        startActivity(intent);
+    }
+
+    public void addRecent(View view, int resid){
+        ImageView newImage = new ImageView(this);
+        newImage.setImageResource(R.drawable.venus);
+        int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
+
+        recents.addView(newImage);
+        newImage.getLayoutParams().height = dimensionInDp;
+        newImage.getLayoutParams().width = dimensionInDp;
+        newImage.requestLayout();
     }
 
 }
