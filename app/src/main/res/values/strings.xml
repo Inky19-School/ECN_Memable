@@ -14,15 +14,16 @@
     <string name="search_title">Search</string>
     <string name="myMemes">Mes Memes</string>
     <string name="nav_add">Add</string>
-
     <string name="title_activity_edit_page">EditPage</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string name="title_activity_edit_page">EditPage</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="navbar_community">Community</string>
     <string name="navbar_home">Home</string>
     <string name="navbar_collection">Collection</string>
     <string name="navbar_favorites">Favorites</string>
     <string name="suggestions">Suggestions</string>
-
 </resources>
