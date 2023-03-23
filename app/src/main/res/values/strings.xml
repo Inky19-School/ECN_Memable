@@ -22,14 +22,14 @@
     <string name="navbar_collection">Collection</string>
     <string name="navbar_favorites">Favorites</string>
     <string name="suggestions">Suggestions</string>
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <string-array name="mode_array">
+        <item>Edit</item>
+        <item>Paint</item>
+        <item>Move</item>
+    </string-array>
+    <string-array name="font_array">
+        <item>Aria</item>
+        <item>Comic sans ms</item>
+        <item>Roboto</item>
     </string-array>
 </resources>
