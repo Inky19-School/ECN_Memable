@@ -68,6 +68,10 @@ public class EditActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
     }
 
+    /**
+     * Renvoie l'image éditée à la page d'accueil et ferme la page
+     * @param view
+     */
     public void returnImage(View view) {
         image.setDrawingCacheEnabled(true);
         Bitmap bmp = image.getDrawingCache();
