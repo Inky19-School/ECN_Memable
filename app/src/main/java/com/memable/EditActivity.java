@@ -8,10 +8,12 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
@@ -32,6 +34,13 @@ public class EditActivity extends AppCompatActivity {
         bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         image = (ImageView) findViewById(R.id.imageWindow);
         image.setImageBitmap(bitmap);
+
+        FloatingActionButton button = (FloatingActionButton) findViewById(R.id.backButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         fontSize = (EditText) findViewById(R.id.fontSize);
         fontSize.setText("12");
