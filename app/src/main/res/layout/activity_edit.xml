@@ -145,6 +145,7 @@
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
+            android:onClick="returnImage"
             android:backgroundTint="@color/light_blue_A200"
             app:cornerRadius="15dp"
             app:iconGravity="textStart"
