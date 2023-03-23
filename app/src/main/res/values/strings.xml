@@ -17,10 +17,19 @@
     <string name="title_activity_edit_page">EditPage</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
     <string name="navbar_community">Community</string>
     <string name="navbar_home">Home</string>
     <string name="navbar_collection">Collection</string>
     <string name="navbar_favorites">Favorites</string>
     <string name="suggestions">Suggestions</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>
