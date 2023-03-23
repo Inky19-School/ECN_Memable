@@ -7,12 +7,16 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 public class EditActivity extends AppCompatActivity {
     ImageView image;
     Spinner spinner;
+    EditText fontSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,8 @@ public class EditActivity extends AppCompatActivity {
         image = (ImageView) findViewById(R.id.imageWindow);
         image.setImageBitmap(bitmap);
 
+        fontSize = (EditText) findViewById(R.id.fontSize);
+        fontSize.setText("12");
         //Spinner
         spinner = (Spinner) findViewById(R.id.spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
