@@ -3,6 +3,7 @@ package com.memable;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
@@ -56,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnClickListener(v -> searchView.setIconified(false));
 
         toolbar.setNavigationOnClickListener(this::openDrawer);
-        //setSupportActionBar(binding.appBarMain.toolbar);
 
         drawer = binding.drawerLayout;
 
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             recents.addView(newImage);
             newImage.getLayoutParams().height = dimensionInDp;
             newImage.getLayoutParams().width = dimensionInDp;
+
             newImage.requestLayout();
         } else {
             System.out.println("NON");

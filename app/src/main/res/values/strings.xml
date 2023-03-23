@@ -2,8 +2,8 @@
     <string name="app_name">Memable</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Username</string>
+    <string name="nav_header_subtitle">username@mail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -28,7 +28,7 @@
     <string name="search_preview">search</string>
     <string name="no_recent_images">No recent images</string>
     <string name="image">image</string>
-    <string name="recents">recents</string>
+    <string name="recents">Recent images</string>
     <string-array name="mode_array">
         <item>Edit</item>
         <item>Paint</item>
