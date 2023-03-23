@@ -1,5 +1,6 @@
 package com.memable;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -51,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+    private void switchActivities() {
+        Intent switchActivityIntent = new Intent(this, EditActivity.class);
+        startActivity(switchActivityIntent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
