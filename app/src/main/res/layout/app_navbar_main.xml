@@ -24,6 +24,7 @@
             android:layout_marginBottom="8dp"
             android:scaleType="center"
             android:src="@drawable/ic_add_outline"
+            android:onClick="switchActivities"
             app:elevation="6dp"
             app:maxImageSize="44dp" />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
