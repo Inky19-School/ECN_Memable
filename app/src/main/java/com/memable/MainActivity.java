@@ -86,10 +86,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
         if (requestCode == IMAGE_RESPONSE && resultCode == RESULT_OK) {
             System.out.println("OUI");
+            Bitmap bitmap;
+            byte[] byteArray = intent.getByteArrayExtra("image");
+            bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
+            ImageView newImage = new ImageView(this);
+            newImage.setImageBitmap(bitmap);
+            int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
+
+            recents.addView(newImage);
+            newImage.getLayoutParams().height = dimensionInDp;
+            newImage.getLayoutParams().width = dimensionInDp;
+            newImage.requestLayout();
         } else {
             System.out.println("NON");
         }
