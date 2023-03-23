@@ -14,4 +14,9 @@
     <string name="search_title">Search</string>
     <string name="myMemes">Mes Memes</string>
     <string name="nav_add">Add</string>
+    <string name="navbar_community">Community</string>
+    <string name="navbar_home">Home</string>
+    <string name="navbar_collection">Collection</string>
+    <string name="navbar_favorites">Favorites</string>
+    <string name="suggestions">Suggestions</string>
 </resources>
