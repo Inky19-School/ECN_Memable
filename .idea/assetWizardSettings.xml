@@ -321,7 +321,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/redo/baseline_redo_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/opacity/baseline_opacity_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -331,7 +331,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="baseline_redo_24" />
+                            <entry key="outputName" value="baseline_opacity_24" />
                             <entry key="sourceFile" value="C:\Users\remir\Documents\EI2\DEVMO\Memable\memable" />
                           </map>
                         </option>

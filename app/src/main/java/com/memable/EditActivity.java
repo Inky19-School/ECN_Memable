@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -21,7 +22,10 @@ import java.io.ByteArrayOutputStream;
 public class EditActivity extends AppCompatActivity {
     ImageView image;
     Spinner spinner;
+    Spinner spinner2;
     EditText fontSize;
+
+    ImageButton previewImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +46,25 @@ public class EditActivity extends AppCompatActivity {
             }
         });
 
+        previewImage = (ImageButton) findViewById(R.id.previewImage);
+        previewImage.setImageBitmap(bitmap);
+
+
         fontSize = (EditText) findViewById(R.id.fontSize);
         fontSize.setText("12");
         //Spinner
-        spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.mode_spinner);
+        spinner2 = (Spinner) findViewById(R.id.family_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.planets_array, android.R.layout.simple_spinner_item);
+                R.array.mode_array, android.R.layout.simple_spinner_dropdown_item);
         // Specify the layout to use when the list of choices appears
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
+                R.array.font_array, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
+        spinner2.setAdapter(adapter2);
         spinner.setAdapter(adapter);
     }
 

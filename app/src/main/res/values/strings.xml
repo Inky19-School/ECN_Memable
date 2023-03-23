@@ -2,8 +2,8 @@
     <string name="app_name">Memable</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Username</string>
-    <string name="nav_header_subtitle">email@mail.com</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -12,7 +12,7 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="search_title">Search</string>
-    <string name="recents">Recents</string>
+    <string name="myMemes">Mes Memes</string>
     <string name="nav_add">Add</string>
     <string name="title_activity_edit_page">EditPage</string>
     <string name="dummy_button">Dummy Button</string>
@@ -28,14 +28,15 @@
     <string name="search_preview">search</string>
     <string name="no_recent_images">No recent images</string>
     <string name="image">image</string>
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <string name="recents">recents</string>
+    <string-array name="mode_array">
+        <item>Edit</item>
+        <item>Paint</item>
+        <item>Move</item>
+    </string-array>
+    <string-array name="font_array">
+        <item>Aria</item>
+        <item>Comic sans ms</item>
+        <item>Roboto</item>
     </string-array>
 </resources>
